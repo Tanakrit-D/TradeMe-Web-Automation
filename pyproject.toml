@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "trademe-web-automation"
+version = "0.1.0"
+description = "TradeMe Web Automation Project with Robot Framework"
+authors = ["Tanakrit-D <127579510+Tanakrit-D@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+robotframework = "^7.0"
+robotframework-browser = "^18.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

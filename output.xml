@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on darwin)" generated="2024-05-02T02:33:13.403836" rpa="false" schemaversion="5">
+<suite id="s1" name="Register" source="/Users/dominic/Repositories/TradeMe-Web-Automation/tests/register.robot">
+<test id="s1-t1" name="Register New Account Existing" line="20">
+<kw name="Open Trade Me" owner="Keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-05-02T02:33:14.757401" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/dominic/Repositories/TradeMe-Web-Automation/browser/traces/e2b73c38-44c5-47ae-9050-c38cd5aca2a9"}</msg>
+<msg time="2024-05-02T02:33:15.092789" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/dominic/Repositories/TradeMe-Web-Automation/browser/traces/e2b73c38-44c5-47ae-9050-c38cd5aca2a9"}</msg>
+<arg>${DRIVER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-05-02T02:33:14.755892" elapsed="0.337615"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2024-05-02T02:33:15.094772" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  }
+}</msg>
+<msg time="2024-05-02T02:33:15.107844" level="INFO">Successfully created context. </msg>
+<msg time="2024-05-02T02:33:15.107983" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1920, 'height': 1080}}</msg>
+<arg>viewport={'width': ${VIEWPORT_W}, 'height': ${VIEWPORT_H}}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2024-05-02T02:33:15.094073" elapsed="0.014003"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-05-02T02:33:18.656572" level="INFO">Successfully initialized new page object and opened url: https://www.tmsandbox.co.nz/a/</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-05-02T02:33:15.108230" elapsed="3.548667"/>
+</kw>
+<kw name="Wait For Load State" owner="Browser">
+<msg time="2024-05-02T02:33:18.657743" level="INFO">Waiting page load to state to receive domcontentloaded in 60000.0</msg>
+<msg time="2024-05-02T02:33:18.660444" level="INFO">Load state domcontentloaded got in 60000</msg>
+<arg>domcontentloaded</arg>
+<arg>60s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits that the page reaches the required load state.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.657147" elapsed="0.003456"/>
+</kw>
+<status status="PASS" start="2024-05-02T02:33:14.754419" elapsed="3.906325"/>
+</kw>
+<kw name="Go To Register Page" owner="Keywords">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-02T02:33:18.661613" level="INFO">Clicks the element 'xpath=(//a[@href="register"])[1]'.</msg>
+<arg>${register_link}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.661287" elapsed="0.056624"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2024-05-02T02:33:18.757040" level="INFO">Title: 'Register for membership of Trade Me | Trade Me'</msg>
+<arg>contains</arg>
+<arg>Register for membership of Trade Me</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.718137" elapsed="0.039069"/>
+</kw>
+<status status="PASS" start="2024-05-02T02:33:18.661008" elapsed="0.096296"/>
+</kw>
+<kw name="Get Account" owner="Account_Manager">
+<msg time="2024-05-02T02:33:18.758185" level="INFO">${account_info} = {'account': 'UserID_695519', 'email': 'sjykpyue@test.account.com', 'password': 'CcAJYyLn', 'f_name': 'OFTM', 'l_name': 'SNRN', 'date_of_birth': '2000/01/01'}</msg>
+<var>${account_info}</var>
+<arg>${account_file}</arg>
+<arg>UserID_695519</arg>
+<status status="PASS" start="2024-05-02T02:33:18.757520" elapsed="0.000874"/>
+</kw>
+<kw name="Set Account Purpose" owner="Keywords">
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2024-05-02T02:33:18.758931" level="INFO">${purpose} = personal</msg>
+<var>${purpose}</var>
+<arg>${purpose}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.758812" elapsed="0.000168"/>
+</kw>
+<if>
+<branch type="IF" condition="'${purpose}' == 'personal'">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-02T02:33:18.759435" level="INFO">Clicks the element 'xpath=//a[@href="/a/register/personal"]'.</msg>
+<arg>${personal_link}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.759214" elapsed="0.056765"/>
+</kw>
+<status status="PASS" start="2024-05-02T02:33:18.759067" elapsed="0.057032"/>
+</branch>
+<status status="PASS" start="2024-05-02T02:33:18.759043" elapsed="0.057109"/>
+</if>
+<if>
+<branch type="IF" condition="'${purpose}' == 'business'">
+<kw name="Click" owner="Browser">
+<arg>${business_link}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-05-02T02:33:18.816414" elapsed="0.000044"/>
+</kw>
+<status status="NOT RUN" start="2024-05-02T02:33:18.816205" elapsed="0.000299"/>
+</branch>
+<status status="PASS" start="2024-05-02T02:33:18.816193" elapsed="0.000345"/>
+</if>
+<arg>Personal</arg>
+<status status="PASS" start="2024-05-02T02:33:18.758614" elapsed="0.057951"/>
+</kw>
+<kw name="Input Account Details" owner="Keywords">
+<kw name="Type Text" owner="Browser">
+<msg time="2024-05-02T02:33:18.817398" level="INFO">Types the text 'sjykpyue@test.account.com' in the given field.</msg>
+<arg>${email_field}</arg>
+<arg>${account_info['email']}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.816934" elapsed="0.072319"/>
+</kw>
+<kw name="Type Secret" owner="Browser">
+<arg>${password_field}</arg>
+<arg>$account_info['password']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.889486" elapsed="0.025919"/>
+</kw>
+<kw name="Type Secret" owner="Browser">
+<arg>${confirm_password_field}</arg>
+<arg>$account_info['password']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.915645" elapsed="0.029775"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2024-05-02T02:33:18.946179" level="INFO">Types the text 'UserID_695519' in the given field.</msg>
+<arg>${username_field}</arg>
+<arg>${account_info['account']}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.945652" elapsed="0.032240"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2024-05-02T02:33:18.978239" level="INFO">${region} = new zealand</msg>
+<var>${region}</var>
+<arg>${region}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.978086" elapsed="0.000211"/>
+</kw>
+<if>
+<branch type="IF" condition="'${region}' == 'new zealand'">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-02T02:33:18.979023" level="INFO">Clicks the element 'xpath=//tg-radio-item[@value="New Zealand"]/label'.</msg>
+<arg>${region_nz}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:18.978786" elapsed="0.031730"/>
+</kw>
+<status status="PASS" start="2024-05-02T02:33:18.978600" elapsed="0.032036"/>
+</branch>
+<status status="PASS" start="2024-05-02T02:33:18.978580" elapsed="0.032107"/>
+</if>
+<if>
+<branch type="IF" condition="'${region}' == 'australia'">
+<kw name="Check Checkbox" owner="Browser">
+<arg>${region_au}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="NOT RUN" start="2024-05-02T02:33:19.010944" elapsed="0.000049"/>
+</kw>
+<status status="NOT RUN" start="2024-05-02T02:33:19.010731" elapsed="0.000307"/>
+</branch>
+<status status="PASS" start="2024-05-02T02:33:19.010720" elapsed="0.000352"/>
+</if>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-02T02:33:19.011358" level="INFO">Clicks the element 'xpath=//button[@type="submit"]'.</msg>
+<arg>${submit_button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.011119" elapsed="0.074073"/>
+</kw>
+<arg>${account_info}</arg>
+<arg>New Zealand</arg>
+<status status="PASS" start="2024-05-02T02:33:18.816741" elapsed="0.268591"/>
+</kw>
+<kw name="Input Personal Details" owner="Keywords">
+<kw name="Type Text" owner="Browser">
+<msg time="2024-05-02T02:33:19.086633" level="INFO">Types the text 'OFTM' in the given field.</msg>
+<arg>${f_name_field}</arg>
+<arg>${account_info['f_name']}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.086120" elapsed="0.019652"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2024-05-02T02:33:19.106451" level="INFO">Types the text 'SNRN' in the given field.</msg>
+<arg>${l_name_field}</arg>
+<arg>${account_info['l_name']}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.105970" elapsed="0.017481"/>
+</kw>
+<kw name="Get Formatted Date" owner="Keywords">
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-05-02T02:33:19.125532" level="INFO">${formatted_date} = 2000 January 01</msg>
+<var>${formatted_date}</var>
+<arg>${date}</arg>
+<arg>result_format=%Y %B %d</arg>
+<arg>date_format=%Y/%m/%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.124101" elapsed="0.001519"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-05-02T02:33:19.125892" level="INFO">@{date_parts} = [ 2000 | January | 01 ]</msg>
+<var>@{date_parts}</var>
+<arg>${formatted_date}</arg>
+<arg>${SPACE}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.125728" elapsed="0.000213"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-02T02:33:19.126966" level="INFO">${date_dict} = {'year': '2000', 'month': 'January', 'day': '01'}</msg>
+<var>${date_dict}</var>
+<arg>year=${date_parts[0]}</arg>
+<arg>month=${date_parts[1]}</arg>
+<arg>day=${date_parts[2]}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.126040" elapsed="0.000994"/>
+</kw>
+<return>
+<value>${date_dict}</value>
+<status status="PASS" start="2024-05-02T02:33:19.127098" elapsed="0.000085"/>
+</return>
+<msg time="2024-05-02T02:33:19.127283" level="INFO">${formatted_date} = {'year': '2000', 'month': 'January', 'day': '01'}</msg>
+<var>${formatted_date}</var>
+<arg>${account_info['date_of_birth']}</arg>
+<doc>The date fields for registration use the format 01 January 2000 (%d %B %Y)
+However, these are written and stored in /data/Accounts.csv as 2000/01/01 (%Y/%m/%d) for readability.
+This function will convert them and return a dictionary with easily accessible keys.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.123682" elapsed="0.003645"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-02T02:33:19.127674" level="INFO">2000/01/01</msg>
+<arg>${account_info['date_of_birth']}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.127421" elapsed="0.000308"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-02T02:33:19.127905" level="INFO">{'year': '2000', 'month': 'January', 'day': '01'}</msg>
+<arg>${formatted_date}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.127811" elapsed="0.000140"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2024-05-02T02:33:19.128405" level="INFO">Types the text '01' in the given field.</msg>
+<arg>${dob_d_field}</arg>
+<arg>${formatted_date['day']}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.128025" elapsed="0.014873"/>
+</kw>
+<kw name="Select Options By" owner="Browser">
+<msg time="2024-05-02T02:33:19.143760" level="INFO">Selects the option(s) January by attribute SelectAttribute.label from element xpath=//select[@name="month"].</msg>
+<arg>${dob_m_field}</arg>
+<arg>text</arg>
+<arg>${formatted_date['month']}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.143150" elapsed="0.017067"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2024-05-02T02:33:19.160986" level="INFO">Types the text '2000' in the given field.</msg>
+<arg>${dob_y_field}</arg>
+<arg>${formatted_date['year']}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.160436" elapsed="0.033927"/>
+</kw>
+<arg>${account_info}</arg>
+<status status="PASS" start="2024-05-02T02:33:19.085803" elapsed="0.108712"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-02T02:33:24.196692" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-02T02:33:19.194676" elapsed="5.002593"/>
+</kw>
+<status status="PASS" start="2024-05-02T02:33:14.749653" elapsed="9.448150"/>
+</test>
+<status status="PASS" start="2024-05-02T02:33:13.405867" elapsed="10.858722"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Register">Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

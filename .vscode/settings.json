@@ -1,0 +1,6 @@
+{
+    "python.envFile": "${workspaceFolder}/.env",
+    "robot.pythonpath": [
+        "${workspaceFolder}/libraries"
+      ]
+}
