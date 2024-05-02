@@ -23,7 +23,7 @@ ${gender_male_option}        xpath=//tg-radio-item[@value="male"]/label
 ${gender_female_option}      xpath=//tg-radio-item[@value="female"]/label
 ${gender_diverse_option}     xpath=//tg-radio-item[@value="diverseGender"]/label
 ${address_field}             xpath=//input[@name="fullAddress"]
-${desired_address_option}    xpath=//div[contains(normalize-space(.), '21 Jutland Street, North New Brighton, Christchurch')]/ancestor::button
+${desired_address_option}    xpath=//div[contains(normalize-space(.), '16 Jutland Street, North New Brighton, Christchurch')]/ancestor::button
 ${town_option}               xpath=//select[@name="closestTown"]
 ${terms_option}              xpath=//tg-checkbox[@name="hasAcceptedTerms"]/label
 

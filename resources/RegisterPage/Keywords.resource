@@ -69,7 +69,7 @@ Input Personal Details
     Select Options By    ${phone_areacode_field}    text    03
     Type Text    ${phone_number_field}    1234567
     Click    ${gender_male_option}
-    Type Text    ${address_field}    21 Jutland Street
+    Type Text    ${address_field}    16 Jutland Street
     Wait For Elements State    ${desired_address_option}    visible
     Click    ${desired_address_option}
     Select Options By    ${town_option}    text    Canterbury - Christchurch City
