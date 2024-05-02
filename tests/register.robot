@@ -1,7 +1,7 @@
 *** Settings ***
 Library     Browser
 Library     OperatingSystem
-Library     Account_Manager
+Library     AccountManager
 Resource    ../resources/Common/Keywords.resource
 Resource    ../resources/RegisterPage/Keywords.resource
 
@@ -15,13 +15,14 @@ Register New Account
     ${account_info}    Create Account
     Set Account Purpose    Personal
     Input Account Details    ${account_info}    New Zealand
-    Sleep    5s
+    Input Personal Details    ${account_info}
+    Verify Success    ${account_info}
 
 Register New Account Existing
     Open Trade Me
     Go To Register Page
-    ${account_info}    Get Account    ${account_file}    UserID_695519
+    ${account_info}    Get Account    ${account_file}    UserID_246744
     Set Account Purpose    Personal
     Input Account Details    ${account_info}    New Zealand
     Input Personal Details    ${account_info}
-    Sleep    5s
+    Verify Success    ${account_info}

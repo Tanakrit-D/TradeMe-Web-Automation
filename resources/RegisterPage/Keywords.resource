@@ -2,7 +2,8 @@
 Library     Browser
 Library     Collections
 Library     String
-Library     Account_Manager
+Library     AccountManager
+Library     DialogManager
 Resource    Locators.resource
 Resource    Variables.resource
 Resource    ../Common/Keywords.resource
@@ -66,12 +67,21 @@ Input Personal Details
     Select Options By    ${dob_m_field}    text    ${formatted_date['month']}
     Type Text    ${dob_y_field}    ${formatted_date['year']}
     Select Options By    ${phone_areacode_field}    text    03
-    Type Text    ${phone_number_field}    text    1234567
+    Type Text    ${phone_number_field}    1234567
     Click    ${gender_male_option}
+    Type Text    ${address_field}    21 Jutland Street
+    Wait For Elements State    ${desired_address_option}    visible
+    Click    ${desired_address_option}
+    Select Options By    ${town_option}    text    Canterbury - Christchurch City
+    Click    ${terms_option}
+    Click    ${submit_button}
+
+Verify Success
+    [Arguments]    ${account_info}
+    Wait For Elements State    ${register_success}    attached
+    Set Account Data    ${account_file}    ${account_info['account']}    status    enabled
 
 Captcha Handling
-    IF    ${CAPTCHA_SKIP} != ${True}
-        Call Keyword
-    ELSE
-        
+    IF    ${CAPTCHA_SKIP} == ${False}
+        Captcha Input Required
     END

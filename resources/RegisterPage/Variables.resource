@@ -1,2 +1,2 @@
 *** Variables ***
-${CAPTCHA_SKIP}    ${True}
+${CAPTCHA_SKIP}    ${False}

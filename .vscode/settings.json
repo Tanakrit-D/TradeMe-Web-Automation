@@ -1,6 +1,7 @@
 {
     "python.envFile": "${workspaceFolder}/.env",
     "robot.pythonpath": [
-        "${workspaceFolder}/libraries"
+        "${workspaceFolder}/libraries/Account",
+        "${workspaceFolder}/libraries/Dialog"
       ]
 }

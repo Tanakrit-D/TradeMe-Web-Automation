@@ -2,7 +2,7 @@
 Library        Browser
 Library        DateTime
 Library        String
-Library        Account_Manager
+Library        AccountManager
 Resource       Variables.resource
 
 *** Variables ***
@@ -16,9 +16,7 @@ Open Trade Me
     Wait For Load State    domcontentloaded    60s
 
 Load User
-    [Arguments]    ${account_name}
-    Get Account    ${account_file}    ${account_name}
-    RETURN    &{loaded_account}
+    Log    test
 
 Get Formatted Date
     [Documentation]    The date fields for registration use the format 01 January 2000 (%d %B %Y)

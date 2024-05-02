@@ -7,8 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-robotframework = "^7.0"
+robotframework = "6.1.1"
 robotframework-browser = "^18.3.0"
+rpaframework-assistant = "^3.0.4"
 
 
 [build-system]
