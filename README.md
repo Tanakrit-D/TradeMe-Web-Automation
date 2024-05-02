@@ -7,7 +7,7 @@ The [accounts data](./data/Accounts.csv) has not be excluded with [.gitignore](.
 This project uses [pipx](https://github.com/pypa/pipx) (optional) and [Poetry](https://python-poetry.org/docs/).
 
 ## Version Notes
-I've locked Robot Framework to 6.1.1 due to the <7.0.0 dependency of RPA Assistant which is used for dialog windows.
+I've locked `Robot Framework` to `6.1.1` due to the `<7.0.0` dependency of RPA Assistant which is used for dialog windows.
 
 ## Test Example
 [register.robot](./tests/register.robot)
